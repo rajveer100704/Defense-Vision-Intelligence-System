@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  defense-ai:
+    build: .
+    container_name: defense_ai_system
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    restart: unless-stopped

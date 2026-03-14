@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defense Vision Intelligence Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <header>
+        <div class="logo">
+            <span class="pulse"></span>
+            <h1>DEFENSE VISION <span class="accent">INTELLIGENCE</span></h1>
+        </div>
+        <div class="status-bar">
+            <span id="ws-status" class="status-indicator offline">OFFLINE</span>
+            <span id="system-time">00:00:00 UTC</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="map-container">
+            <div id="map"></div>
+            <div class="overlay-overlay"></div>
+        </section>
+
+        <section id="sidebar">
+            <div class="panel target-panel">
+                <h2>TACTICAL TARGETS</h2>
+                <div id="target-list" class="scrollable">
+                    <div class="no-data">NO TARGETS IN RANGE</div>
+                </div>
+            </div>
+
+            <div class="panel alert-panel">
+                <h2>MISSION ALERTS</h2>
+                <div id="alert-list" class="scrollable">
+                    <div class="no-data">SECURE</div>
+                </div>
+            </div>
+
+            <div class="panel nodes-panel">
+                <h2>SENSOR NETWORK</h2>
+                <div id="node-list" class="scrollable">
+                    <div class="no-data">NO ACTIVE NODES</div>
+                </div>
+            </div>
+
+            <div class="panel replay-panel">
+                <h2>MISSION ANALYSIS</h2>
+                <div id="mission-list" class="scrollable">
+                    <div class="no-data">SCANNING ARCHIVES...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

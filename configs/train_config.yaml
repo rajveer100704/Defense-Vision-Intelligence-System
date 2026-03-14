@@ -1,0 +1,21 @@
+# YOLOv8 Training Configuration
+
+model: yolov8n.pt
+
+training:
+  epochs: 50
+  batch: 16
+  imgsz: 640
+
+optimizer:
+  lr0: 0.01  # Initial learning rate
+  weight_decay: 0.0005
+
+curriculum:
+  stages:
+    - name: "Stage 1: VisDrone"
+      data: "datasets/visdrone/visdrone.yaml"
+    - name: "Stage 2: DOTA"
+      data: "datasets/dota/dota.yaml"
+    - name: "Stage 3: xView"
+      data: "datasets/xview/xview.yaml"
